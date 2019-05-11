@@ -1,6 +1,5 @@
 package Sorts;
 import Fundamentals.Stopwatch;
-import java.util.Random;
 /**
  * public static double time(String alg, Double[] a)
  * public static double timeRandomInput(String alg, int N,int T)
@@ -22,6 +21,8 @@ public class SortCompare {
             Insertion.sort(a);
         if(alg.equals("Heap"))
             Insertion.sort(a);
+        if(alg.equals("InsertionAdvanced"))
+            InsertionAdvanced.sort(a);
         return timer.elapsedTime();
     }
     public static double timeRandomInput(String alg, int N, int T)
@@ -30,25 +31,23 @@ public class SortCompare {
         Double[] a= new Double[N];
         for(int t=0;t<T;t++)//How many times
         {
-            Random r= new Random();
+            //Random r= new Random();
             for(int i=0;i<N;i++)
-                a[i]=r.nextDouble();
+                a[i]=Math.floor(Math.random()*100);
             total= total+time(alg,a);
         }
         return total;
     }
     public static void main(String[] args)
     {
-        //System.out.println("<String: Sort algorithm 1> <String: Sort algorithm2> " +
-        //        "<int: run how many times> <int: sort how many numbers>");
         String alg1= "Insertion";
-        String alg2= "Selection";
+        String alg2= "InsertionAdvanced";
         int N=10000;
         int T=10;
         double t1=timeRandomInput(alg1,N,T);
         double t2=timeRandomInput(alg2,N,T);
         System.out.println("Sorting and Comparing...");
         System.out.printf("For %d random doubles, after %d times\n",N,T);
-        System.out.printf("%s is %.1f times faster than %s.\n",alg1,t2/t1,alg2);
+        System.out.printf("%s times compared with %s times: %.1f  %.1f\n",alg1,alg2,t1,t2);
     }
 }

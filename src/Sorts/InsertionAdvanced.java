@@ -1,26 +1,32 @@
 package Sorts;
-import java.util.ArrayList;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
  * private static boolean less(Comparable v, Comparable w)
- * private static void exch(Comparable[] a, int i, int j)
+ * **private static void exch(Comparable[] a, int i, int j)
  * private static void show(Comparable[] a)
  * **
  * public static void main(String[] args)
  */
-public class Shell {
+public class InsertionAdvanced
+{
     public static void sort(Comparable[] a)
     {
-        //Create h-sequence
-        int pow3=0;
-        int sum3pow=(int)Math.pow(3,pow3);
-        ArrayList<Integer> sequence_sum3pow= new ArrayList<Integer>();
-        while(a.length>sum3pow)
+        for(int i=1;i<a.length;i++)
         {
-            sequence_sum3pow.add(sum3pow);
-            sum3pow=sum3pow+(int)Math.pow(3,pow3);
-            pow3++;
+            int j=i;
+            Comparable cur=a[j];
+            while(j>0&&less(cur,a[j-1]))
+            {
+                j--;
+            }
+            int k=i;
+            while(j<=k&&k>0)
+            {
+                a[k]=a[k-1];
+                k--;
+            }
+            a[j]=cur;
         }
     }
     public static boolean isSorted(Comparable[] a)
@@ -40,12 +46,14 @@ public class Shell {
             return true;
         return false;
     }
+    /**
     private static void exch(Comparable[] a, int i, int j)
     {
         Comparable temp=a[i];
         a[i]=a[j];
         a[j]=temp;
     }
+     */
     private static void show(Comparable[] a)
     {
         for(int i=0;i<a.length;i++)
@@ -73,3 +81,4 @@ public class Shell {
         show(dates);
     }
 }
+
