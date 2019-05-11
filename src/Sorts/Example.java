@@ -53,5 +53,12 @@ public class Example
         sort(strs);
         assert isSorted(strs);
         show(strs);
+        //
+        Date d1=new Date(28,11,1994);
+        Date d2=new Date(02,06,1996);
+        Date[] dates={d1,d2};
+        sort(dates);
+        assert isSorted(dates);
+        show(dates);
     }
 }
