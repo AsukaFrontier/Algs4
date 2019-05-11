@@ -1,6 +1,8 @@
+package Fundamentals;
+
 public class FixedCapacityStackofStrings {
     /**
-     * FixedCapacityStackofStrings(int cap)
+     * Fundamentals.FixedCapacityStackofStrings(int cap)
      * void push(String item)
      * String pop()
      * boolean isEmpty()

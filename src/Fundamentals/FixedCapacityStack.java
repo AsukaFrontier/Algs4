@@ -1,6 +1,8 @@
+package Fundamentals;
+
 public class FixedCapacityStack<Item> {
     /**
-     * FixedCapacityStack(int cap)
+     * Fundamentals.FixedCapacityStack(int cap)
      * void push(Item item)
      * Item pop()
      * boolean isEmpty()

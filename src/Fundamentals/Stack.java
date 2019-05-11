@@ -1,8 +1,10 @@
+package Fundamentals;
+
 import java.util.Iterator;
 public class Stack<Item> implements Iterable<Item> {
     /**
      * public:
-     * Stack()
+     * Fundamentals.Stack()
      * void push(Item item)
      * Item pop()
      * boolean isEmpty()

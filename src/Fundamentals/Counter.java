@@ -1,7 +1,9 @@
+package Fundamentals;
+
 import edu.princeton.cs.algs4.*;
 public class Counter {
     /**
-     * Counter(String id)
+     * Fundamentals.Counter(String id)
      * void increment()
      * int tally()
      * String toString()

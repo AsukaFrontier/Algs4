@@ -1,7 +1,8 @@
-import edu.princeton.cs.algs4.*;
+package Fundamentals;
+
 public class Accumulator {
     /**
-     * Accumulator()
+     * Fundamentals.Accumulator()
      * void addDataValue(double val)
      * double mean()
      * String toString()

@@ -1,7 +1,9 @@
+package Fundamentals;
+
 public class FixedCapacityQueueofStrings {
     /**
      * public:
-     * FixedCapacityQueueofStrings(int cap)
+     * Fundamentals.FixedCapacityQueueofStrings(int cap)
      * void enqueue(String item)
      * String dequeue()
      * boolean isEmpty()

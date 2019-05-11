@@ -1,3 +1,5 @@
+package Fundamentals;
+
 import java.util.Iterator;
 public class Queue<Item> implements Iterable<Item> {
     /**
@@ -75,6 +77,6 @@ public class Queue<Item> implements Iterable<Item> {
     }
     public static void main(String[] args)
     {
-        //Test of Queue
+        //Test of Fundamentals.Queue
     }
 }

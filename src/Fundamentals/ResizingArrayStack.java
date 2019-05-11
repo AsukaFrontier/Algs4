@@ -1,3 +1,5 @@
+package Fundamentals;
+
 import java.util.Iterator;
 public class ResizingArrayStack<Item> implements Iterable<Item> {
     /**
@@ -70,7 +72,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
     }
     public static void main(String[] args)
     {
-        //Test of ResizingArrayStack
+        //Test of Fundamentals.ResizingArrayStack
         ResizingArrayStack<String> stack= new ResizingArrayStack<String>();
         stack.push("This");
         stack.push("is");
