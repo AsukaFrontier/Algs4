@@ -9,7 +9,8 @@ import java.util.ArrayList;
  * **
  * public static void main(String[] args)
  */
-public class Shell {
+public class Shell
+{
     public static void sort(Comparable[] a)
     {
         //Create h-sequence
