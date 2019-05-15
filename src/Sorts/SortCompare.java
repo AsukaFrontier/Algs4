@@ -40,14 +40,18 @@ public class SortCompare {
     }
     public static void main(String[] args)
     {
-        String alg1= "Insertion";
-        String alg2= "InsertionAdvanced";
+        String alg1= "Shell";
+        String alg2= "Selection";
+        String alg3= "Insertion";
+        String alg4= "InsertionAdvanced";
         int N=10000;
-        int T=10;
+        int T=20;
         double t1=timeRandomInput(alg1,N,T);
         double t2=timeRandomInput(alg2,N,T);
+        double t3=timeRandomInput(alg3,N,T);
+        double t4=timeRandomInput(alg4,N,T);
         System.out.println("Sorting and Comparing...");
         System.out.printf("For %d random doubles, after %d times\n",N,T);
-        System.out.printf("%s times compared with %s times: %.1f  %.1f\n",alg1,alg2,t1,t2);
+        System.out.printf("%s %s %s %s: %.1f %.1f %.1f %.1f\n",alg1,alg2,alg3,alg4,t1,t2,t3,t4);
     }
 }

@@ -1,4 +1,5 @@
 package Sorts;
+//Not working;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -8,7 +9,7 @@ package Sorts;
  * **
  * public static void main(String[] args)
  */
-public class Shell {
+public class ShellAdvanced {
     public static void sort(Comparable[] a)
     {
         //create h-sequence
@@ -29,12 +30,19 @@ public class Shell {
                 for(int k=j+current_element_in_h_sequence;k<a.length;k=k+current_element_in_h_sequence)
                 {
                     int m=k;
-                    //exch()
+                    //move and insert
                     while(m>=current_element_in_h_sequence&&less(a[m],a[m-current_element_in_h_sequence]))
                     {
-                        exch(a,m,m-current_element_in_h_sequence);
                         m=m-current_element_in_h_sequence;
                     }
+                    int min_cur_max= m;
+                    int n=k;
+                    while(n>min_cur_max)
+                    {
+                        a[n]=a[n-current_element_in_h_sequence];
+                        n=n-current_element_in_h_sequence;
+                    }
+                    a[min_cur_max]=a[k];
                 }
             }
         }

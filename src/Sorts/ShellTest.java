@@ -1,4 +1,6 @@
 package Sorts;
+import java.util.ArrayList;
+//Not working;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -8,33 +10,42 @@ package Sorts;
  * **
  * public static void main(String[] args)
  */
-public class Shell {
+public class ShellTest
+{
     public static void sort(Comparable[] a)
     {
-        //create h-sequence
-        int[] h_sequence_pow3={1,4,13,40,121,364,1093};
-        //match a h-sequence
-        int index_max_h_sequence=0;
-        while(a.length>h_sequence_pow3[index_max_h_sequence])
+        //Create h-sequence
+        int pow3=0;
+        int sum3pow=(int)Math.pow(3,pow3);
+        ArrayList<Integer> sequence_sum3pow= new ArrayList<>();
+        while(a.length>sum3pow)
         {
-            index_max_h_sequence++;
+            sequence_sum3pow.add(sum3pow);
+            pow3++;
+            sum3pow=sum3pow+(int)Math.pow(3,pow3);
         }
-        index_max_h_sequence--;
-        //each element in h-sequence
-        for(int i=index_max_h_sequence;i>=0;i--)
+        //h-sequence iteration;
+        for(int i=sequence_sum3pow.size()-1;i>=0;i--)
         {
-            int current_element_in_h_sequence=h_sequence_pow3[i];
-            for(int j=0;j<current_element_in_h_sequence;j=j+1)
+            //each element in h-sequence;
+            for(int j=0;j<sequence_sum3pow.get(i);j++)
             {
-                for(int k=j+current_element_in_h_sequence;k<a.length;k=k+current_element_in_h_sequence)
+                //
+                for(int k=j+sequence_sum3pow.get(i);k<a.length;k=k+sequence_sum3pow.get(i))
                 {
+                    //
                     int m=k;
-                    //exch()
-                    while(m>=current_element_in_h_sequence&&less(a[m],a[m-current_element_in_h_sequence]))
+                    if(m>=sequence_sum3pow.get(i)&&less(a[m],a[m-sequence_sum3pow.get(i)]))
+                        System.out.println("Need exch()");
+                    else
+                        System.out.println("No exch()");
+                    /**while(m>=sequence_sum3pow.get(i)&&less(m,m-sequence_sum3pow.get(i)))
                     {
-                        exch(a,m,m-current_element_in_h_sequence);
-                        m=m-current_element_in_h_sequence;
+                        //exch()
+                        exch(a,m,m-sequence_sum3pow.get(i));
+                        m=m-sequence_sum3pow.get(i);
                     }
+                     */
                 }
             }
         }
@@ -82,8 +93,8 @@ public class Shell {
         //assert isSorted(strs);
         show(strs);
         //
-        Date d1=new Date(02,06,1996);
         Date d2=new Date(28,11,1994);
+        Date d1=new Date(02,06,1996);
         Date[] dates={d1,d2};
         sort(dates);
         //assert isSorted(dates);
