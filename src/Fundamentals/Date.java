@@ -1,62 +1,72 @@
 package Fundamentals;
-
-public class Date {
-    /**
-     * Fundamentals.Date(int month, int day, int year)
-     * int day()
-     * int month()
-     * int year()
-     * String toString()
-     */
-    private final int month;
+/**
+ * public class Date implements Comparable<Date>
+ * public Date(int day, int month, int year)
+ * public int day()
+ * public int month()
+ * public int year()
+ * public String toString()
+ * **
+ * public int compareTo(Date that)
+ * **
+ * public static void main(String[] args)
+ */
+public class Date implements Comparable<Date>{
     private final int day;
+    private final int month;
     private final int year;
-
-    public Date(int m, int d, int y)
+    public Date(int day, int month, int year)
     {
-        month=m;
-        day=d;
-        year=y;
+        this.day=day;
+        this.month=month;
+        this.year=year;
     }
-    public int month()
-    {
-        return month;
-    }
-    public int day()
-    {
-        return day;
-    }
-    public int year()
-    {
-        return year;
-    }
+    /**
+     public int day()
+     {
+     return day;
+     }
+     public int month()
+     {
+     return month();
+     }
+     public int year()
+     {
+     return year;
+     }
+     */
     public String toString()
     {
-        return month()+"/"+day()+"/"+year();
+        return month+"/"+day+"/"+year;
     }
-    public boolean equals(Object x)
+    public int compareTo(Date that)
     {
-        //
-        if(this==x)
-            return true;
-        if(x==null)
-            return false;
-        if(this.getClass()!=x.getClass())
-            return false;
-        Date that=(Date)x;
-        if(this.day()==that.day())
-            if(this.month()==that.month())
-                if(this.year()==that.year())
-                    return true;
-        return false;
+        /**
+         * this.compareTo(that)
+         * this<that: -1
+         * this==that: 0
+         * this>that: 1
+         */
+        if(this.year>that.year)
+            return 1;
+        if(this.year<that.year)
+            return -1;
+        //this.year==that.year
+        if(this.month>that.month)
+            return 1;
+        if(this.month<that.month)
+            return -1;
+        //this.month==that.month
+        if(this.day>that.day)
+            return 1;
+        if(this.day<that.day)
+            return -1;
+        //this.day==that.day
+        return 0;
     }
+    //-----------------------------//
     public static void main(String[] args)
     {
-        //Test
-        int m=11;
-        int d=28;
-        int y=1994;
-        Date birthday = new Date(m,d,y);
-        System.out.println(birthday);
+        //
     }
 }

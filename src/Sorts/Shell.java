@@ -1,4 +1,5 @@
 package Sorts;
+import Fundamentals.Date;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -11,17 +12,13 @@ package Sorts;
 public class Shell {
     public static void sort(Comparable[] a)
     {
-        //create h-sequence
         int[] h_sequence_pow3={1,4,13,40,121,364,1093,3280,9841,29524,88573,265720,797161,2391484};
-        //match a h-sequence
         int index_max_h_sequence=0;
         while(a.length>h_sequence_pow3[index_max_h_sequence])
         {
             index_max_h_sequence++;
         }
         index_max_h_sequence--;
-        //each element in h-sequence
-        //int count_exch=0;
         for(int i=index_max_h_sequence;i>=0;i--)
         {
             int current_element_in_h_sequence=h_sequence_pow3[i];
@@ -30,17 +27,14 @@ public class Shell {
                 for(int k=j+current_element_in_h_sequence;k<a.length;k=k+current_element_in_h_sequence)
                 {
                     int m=k;
-                    //exch()
                     while(m>=current_element_in_h_sequence&&less(a[m],a[m-current_element_in_h_sequence]))
                     {
                         exch(a,m,m-current_element_in_h_sequence);
                         m=m-current_element_in_h_sequence;
-                        //count_exch++;
                     }
                 }
             }
         }
-        //System.out.println("Shell exch(): "+count_exch);
     }
     public static boolean isSorted(Comparable[] a)
     {

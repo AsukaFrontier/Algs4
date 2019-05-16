@@ -1,7 +1,5 @@
 package Sorts;
-
-import java.util.Collections;
-
+import Fundamentals.Date;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -15,7 +13,8 @@ public class Quick {
     public static void sort(Comparable[] a)
     {
         //
-        arrayShuffle(a);
+        //arrayShuffle(a);
+        //StdRandom.shuffle(a);
         sort(a,0,a.length-1);
     }
     private static void sort(Comparable[] a, int lo, int hi)
@@ -43,14 +42,17 @@ public class Quick {
                     break;
             if(i>=j)
                 break;
+            exch(a,i,j);
         }
         exch(a,lo,j);
         return j;
     }
+    /**
     private static void arrayShuffle(Comparable[] a)
     {
         //
     }
+     */
     public static boolean isSorted(Comparable[] a)
     {
         for(int i=1;i<a.length;i++)

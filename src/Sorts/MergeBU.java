@@ -1,5 +1,14 @@
 package Sorts;
-
+import Fundamentals.Date;
+/**
+ * private static Comparable[] aux;
+ * public static void sort(Comparable[] a)
+ * public static void merge(Comparable [] a, int lo, int mid, int hi)
+ * private static boolean less(Comparable v, Comparable w)
+ * private static boolean isSorted(Comparable[] a)
+ * private static void show(Comparable[] a)
+ * public static void main(String[] args)
+ */
 public class MergeBU {
     private static Comparable[] aux;
     public static void sort(Comparable[] a)

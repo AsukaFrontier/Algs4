@@ -1,14 +1,14 @@
 package Fundamentals;
-
-public class FixedCapacityQueueofStrings {
-    /**
-     * public:
-     * Fundamentals.FixedCapacityQueueofStrings(int cap)
-     * void enqueue(String item)
-     * String dequeue()
-     * boolean isEmpty()
-     * int size()
-     */
+/**
+ * public:
+ * Fundamentals.FixedCapacityQueueofStrings(int cap)
+ * void enqueue(String item)
+ * String dequeue()
+ * boolean isEmpty()
+ * int size()
+ */
+public class FixedCapacityQueueofStrings
+{
     private String[] q;
     //private int N;
     private int head;

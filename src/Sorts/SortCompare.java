@@ -70,7 +70,7 @@ public class SortCompare {
     {
         int N=2_000_000;
         int T=10;
-        String alg1= "Shell";
+        String alg1= "Quick";
         double t1=timeRandomInput(alg1,N,T);
         String alg2= "Merge";
         double t2=timeRandomInput(alg2,N,T);
