@@ -68,11 +68,11 @@ public class SortCompare {
     }
     public static void main(String[] args)
     {
-        int N=1_000_000;
+        int N=2_000_000;
         int T=10;
         String alg1= "Shell";
         double t1=timeRandomInput(alg1,N,T);
-        String alg2= "ShellGeneral";
+        String alg2= "Merge";
         double t2=timeRandomInput(alg2,N,T);
         System.out.println("Sorting and Comparing...");
         System.out.printf("For %d random doubles, after %d times\n",N,T);
