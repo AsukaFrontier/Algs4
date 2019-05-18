@@ -78,5 +78,11 @@ public class Queue<Item> implements Iterable<Item> {
     public static void main(String[] args)
     {
         //Test of Fundamentals.Queue
+        Queue<Integer> queue_ints= new Queue<Integer>();
+        queue_ints.enqueue(2);
+        queue_ints.enqueue(1);
+        queue_ints.enqueue(0);
+        System.out.println(queue_ints.dequeue());
+        System.out.println(queue_ints.size());
     }
 }
