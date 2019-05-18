@@ -270,7 +270,7 @@ public class BST<Key extends Comparable<Key>,Value> {
         keys(root,queue,lo,hi);
         return queue;
     }
-    private void keys(Node x. Queue<Key> queue, Key lo, Key hi)
+    private void keys(Node x, Queue<Key> queue, Key lo, Key hi)
     {
         if(x==null)
             return ;
@@ -281,7 +281,7 @@ public class BST<Key extends Comparable<Key>,Value> {
         if(cmplo<=0&&cmphi>=0)
             queue.enqueue(x.key);
         if(cmphi>0)
-            keys(x.right.queue,lo,hi);
+            keys(x.right,queue,lo,hi);
     }
     /**
     private void printTree(Node x)//中序遍历
