@@ -1,5 +1,4 @@
 package Fundamentals;
-
 import java.util.Iterator;
 public class Queue<Item> implements Iterable<Item> {
     /**
@@ -35,7 +34,10 @@ public class Queue<Item> implements Iterable<Item> {
         newLast.item=item;
         newLast.next=null;
         if(isEmpty())
+        {
             first=newLast;
+            last=newLast;
+        }
         else
         {
             last.next=newLast;
@@ -85,4 +87,5 @@ public class Queue<Item> implements Iterable<Item> {
         System.out.println(queue_ints.dequeue());
         System.out.println(queue_ints.size());
     }
+
 }
