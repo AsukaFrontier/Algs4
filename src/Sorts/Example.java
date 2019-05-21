@@ -1,5 +1,4 @@
 package Sorts;
-import Fundamentals.Date;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -9,6 +8,7 @@ import Fundamentals.Date;
  * **
  * public static void main(String[] args)
  */
+import Fundamentals.Date;
 public class Example
 {
     public static void sort(Comparable[] a)
