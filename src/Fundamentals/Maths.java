@@ -1,5 +1,13 @@
 package Fundamentals;
-
+/**
+ * public static int abs(int x)
+ * public static double abs(double x)
+ * public static void shuffle(double[] a)
+ * private static void arrayShuffleFromHead(double[] a)
+ * private static int uniform(int N)
+ * public static boolean isPrime(int x)
+ * public int greatestCommonDivisor(int p, int q)
+ */
 public class Maths {
     //
     public static int abs(int x)
