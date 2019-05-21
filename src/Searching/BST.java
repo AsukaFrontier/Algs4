@@ -1,4 +1,4 @@
-package Search;
+package Searching;
 import Fundamentals.Queue;
 /**
  * private Node root;

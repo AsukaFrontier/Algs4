@@ -7,6 +7,6 @@ Contains:
 2.2. Insertion; InsertionAdvanced;
 2.3. Shell;
 2.4. Merge;
-3. Search.
+3. Searching.
 4. Graphs.
 5. Strings.
