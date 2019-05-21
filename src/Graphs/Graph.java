@@ -1,12 +1,12 @@
 package Graphs;
 import Fundamentals.Bag;
-import java.util.Scanner;
 /**
  * private int V;
  * private int E;
  * private Bag<Integer>[] adj;
  * public Graph(int V)
- * public Graph(Scanner in)
+ * public Graph(int[] a)
+ * //public Graph(Scanner in)
  * public int V()
  * public int E()
  * public void addEdge(int v, int w)
@@ -32,6 +32,18 @@ public class Graph {
         adj=(Bag<Integer>[]) new Bag[V];//泛型数组?
         for(int v=0;v<V;v++)
             adj[v]=new Bag<Integer>();
+    }
+    public Graph(int[] a)
+    {
+        this(a[0]);
+        this.E=a[1];
+        //for(int i=2;i<2*E+2;i=i+2)
+        for(int i=2;i<a.length;i=i+2)
+        {
+            int v=a[i];
+            int w=a[i+1];
+            addEdge(v,w);
+        }
     }
     /**
     public Graph(Scanner in)

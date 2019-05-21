@@ -9,8 +9,8 @@ package Graphs;
  */
 public class DepthFirstSearch {
     //
-    private boolean[] marked;
-    private int count;
+    private boolean[] marked;//声明
+    private int count;//声明
     public DepthFirstSearch(Graph G, int s)//找到和起点s连通的所有顶点
     {
         marked=new boolean[G.V()];
