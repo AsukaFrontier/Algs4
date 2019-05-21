@@ -1,4 +1,4 @@
-package Sorts;
+package Sorting;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)

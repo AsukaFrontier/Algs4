@@ -1,4 +1,4 @@
-package Sorts;
+package Sorting;
 import Fundamentals.Date;
 /**
  * public static void sort(Comparable[] a)
@@ -9,50 +9,33 @@ import Fundamentals.Date;
  * **
  * public static void main(String[] args)
  */
-public class Quick {
+public class Shell {
     public static void sort(Comparable[] a)
     {
-        //
-        //arrayShuffle(a);
-        //StdRandom.shuffle(a);
-        sort(a,0,a.length-1);
-    }
-    private static void sort(Comparable[] a, int lo, int hi)
-    {
-        //
-        if(hi<=lo)
-            return ;
-        int j=partition(a,lo,hi);
-        sort(a,lo,j-1);
-        sort(a,j+1,hi);
-    }
-    private static int partition(Comparable[] a, int lo, int hi)
-    {
-        //
-        int i=lo;
-        int j=hi+1;
-        Comparable v= a[lo];
-        while(true)
+        int[] h_sequence_pow3={1,4,13,40,121,364,1093,3280,9841,29524,88573,265720,797161,2391484};
+        int index_max_h_sequence=0;
+        while(a.length>h_sequence_pow3[index_max_h_sequence])
         {
-            while(less(a[++i],v))
-                if(i==hi)
-                    break;
-            while(less(v,a[--j]))
-                if(j==lo)
-                    break;
-            if(i>=j)
-                break;
-            exch(a,i,j);
+            index_max_h_sequence++;
         }
-        exch(a,lo,j);
-        return j;
+        index_max_h_sequence--;
+        for(int i=index_max_h_sequence;i>=0;i--)
+        {
+            int current_element_in_h_sequence=h_sequence_pow3[i];
+            for(int j=0;j<current_element_in_h_sequence;j=j+1)
+            {
+                for(int k=j+current_element_in_h_sequence;k<a.length;k=k+current_element_in_h_sequence)
+                {
+                    int m=k;
+                    while(m>=current_element_in_h_sequence&&less(a[m],a[m-current_element_in_h_sequence]))
+                    {
+                        exch(a,m,m-current_element_in_h_sequence);
+                        m=m-current_element_in_h_sequence;
+                    }
+                }
+            }
+        }
     }
-    /**
-    private static void arrayShuffle(Comparable[] a)
-    {
-        //
-    }
-     */
     public static boolean isSorted(Comparable[] a)
     {
         for(int i=1;i<a.length;i++)
@@ -85,21 +68,22 @@ public class Quick {
     //-----------------------------------------//
     public static void main(String[] args)
     {
+
         Integer[] ints={5,4,3,2,1,6,7,8,9,10};
         sort(ints);
-        assert isSorted(ints);
+        //assert isSorted(ints);
         show(ints);
         //
         String[] strs= {"e","d","c","b","a","f","g"};
         sort(strs);
-        assert isSorted(strs);
+        //assert isSorted(strs);
         show(strs);
         //
-        Date d1=new Date(28,11,1994);
-        Date d2=new Date(02,06,1996);
+        Date d1=new Date(02,06,1996);
+        Date d2=new Date(28,11,1994);
         Date[] dates={d1,d2};
         sort(dates);
-        assert isSorted(dates);
+        //assert isSorted(dates);
         show(dates);
     }
 }

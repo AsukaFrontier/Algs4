@@ -1,37 +1,32 @@
-package Sorts;
+package Sorting;
 import Fundamentals.Date;
 /**
- *private static Comparable[] aux;
+ * private static Comparable[] aux;
  * public static void sort(Comparable[] a)
- * private static void sort(Comparable[] a, int lo, int hi)
  * public static void merge(Comparable [] a, int lo, int mid, int hi)
  * private static boolean less(Comparable v, Comparable w)
  * private static boolean isSorted(Comparable[] a)
  * private static void show(Comparable[] a)
  * public static void main(String[] args)
  */
-public class Merge
-{
-    private static Comparable[] aux;//auxiliary array
+public class MergeBU {
+    private static Comparable[] aux;
     public static void sort(Comparable[] a)
     {
         //
-        aux= new Comparable[a.length];
-        sort(a,0,a.length-1);
-    }
-    private static void sort(Comparable[] a, int lo, int hi)
-    {
-        //
-        if(hi<=lo)
-            return ;
-        int mid=lo+(hi-lo)/2;
-        sort(a,lo,mid);
-        sort(a,mid+1,hi);
-        merge(a,lo,mid,hi);
+        int N=a.length;
+        aux=new Comparable[N];
+        for(int size=1;size<N;size=size*2)
+        {
+            //
+            for(int lo=0;lo<=N-size*2;lo=lo+size*2)
+            {
+                merge(a,lo,lo+(size-1),Math.min(N-1,lo+size*2-1));
+            }
+        }
     }
     public static void merge(Comparable[] a, int lo, int mid, int hi)
     {
-        //
         int i=lo;
         int j=mid+1;
         for(int k=lo;k<=hi;k++)

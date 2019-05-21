@@ -1,5 +1,4 @@
-package Sorts;
-import Fundamentals.Date;
+package Sorting;
 /**
  * public static void sort(Comparable[] a)
  * public static boolean isSorted(Comparable[] a)
@@ -9,20 +8,19 @@ import Fundamentals.Date;
  * **
  * public static void main(String[] args)
  */
-public class Selection {
+import Fundamentals.Date;
+public class Insertion
+{
     public static void sort(Comparable[] a)
     {
-        for(int i=0;i<a.length;i++)
+        for(int i=1;i<a.length;i++)
         {
-            int min_index=i;
-            for(int j=i+1;j<a.length;j++)
+            int j=i;
+            while(j>0&&less(a[j],a[j-1]))
             {
-                if(less(a[j],a[min_index]))
-                {
-                    min_index=j;
-                }
+                exch(a,j,j-1);
+                j--;
             }
-            exch(a,i,min_index);
         }
     }
     public static boolean isSorted(Comparable[] a)
@@ -75,3 +73,4 @@ public class Selection {
         show(dates);
     }
 }
+

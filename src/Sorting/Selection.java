@@ -1,4 +1,4 @@
-package Sorts;
+package Sorting;
 import Fundamentals.Date;
 /**
  * public static void sort(Comparable[] a)
@@ -9,32 +9,21 @@ import Fundamentals.Date;
  * **
  * public static void main(String[] args)
  */
-public class ShellGeneral {
+public class Selection {
     public static void sort(Comparable[] a)
     {
-        //int count_exch=0;
-        int N=a.length;
-        int h=1;
-        while(h<N)
+        for(int i=0;i<a.length;i++)
         {
-            h=h*3+1;
-        }
-        h=(h-1)/3;
-        while(h>=1)
-        {
-            //
-            for(int i=h;i<N;i++)
+            int min_index=i;
+            for(int j=i+1;j<a.length;j++)
             {
-                //
-                for(int j=i;j>=h&&less(a[j],a[j-h]);j=j-h)
+                if(less(a[j],a[min_index]))
                 {
-                    exch(a,j,j-h);
-                    //count_exch++;
+                    min_index=j;
                 }
             }
-            h=(h-1)/3;
+            exch(a,i,min_index);
         }
-        //System.out.println("ShellGeneral exch(): "+count_exch);
     }
     public static boolean isSorted(Comparable[] a)
     {
@@ -68,22 +57,21 @@ public class ShellGeneral {
     //-----------------------------------------//
     public static void main(String[] args)
     {
-
         Integer[] ints={5,4,3,2,1,6,7,8,9,10};
         sort(ints);
-        //assert isSorted(ints);
+        assert isSorted(ints);
         show(ints);
         //
         String[] strs= {"e","d","c","b","a","f","g"};
         sort(strs);
-        //assert isSorted(strs);
+        assert isSorted(strs);
         show(strs);
         //
-        Date d1=new Date(02,06,1996);
-        Date d2=new Date(28,11,1994);
+        Date d1=new Date(28,11,1994);
+        Date d2=new Date(02,06,1996);
         Date[] dates={d1,d2};
         sort(dates);
-        //assert isSorted(dates);
+        assert isSorted(dates);
         show(dates);
     }
 }

@@ -1,4 +1,4 @@
-package Sorts;
+package Sorting;
 /**
  * private Key[] pq;
  * private int N=0;

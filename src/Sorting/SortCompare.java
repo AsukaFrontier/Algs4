@@ -1,4 +1,4 @@
-package Sorts;
+package Sorting;
 import Fundamentals.Stopwatch;
 /**
  * public static double time(String alg, Double[] a)
