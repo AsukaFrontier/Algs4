@@ -1,5 +1,9 @@
 package Fundamentals;
-
+/**
+ * private final long start;
+ * public Stopwatch()
+ * public double elapsedTime()
+ */
 public class Stopwatch {
     private final long start;
     public Stopwatch()
