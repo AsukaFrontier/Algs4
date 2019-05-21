@@ -15,7 +15,7 @@ public class DepthFirstPaths {
     private void dfs(Graph G, int v)
     {
         marked[v]=true;
-        for(int w: G.adj(v))
+        for(int w: G.adjacent(v))
             if(!marked[w])
             {
                 edgeTo[w]=v;//v -> w

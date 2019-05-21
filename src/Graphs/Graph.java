@@ -1,10 +1,12 @@
 package Graphs;
 import Fundamentals.Bag;
+import java.util.Scanner;
 /**
  * private int V;
  * private int E;
  * private Bag<Integer>[] adj;
  * public Graph(int V)
+ * public Graph(Scanner in)
  * public int V()
  * public int E()
  * public void addEdge(int v, int w)
@@ -31,6 +33,19 @@ public class Graph {
         for(int v=0;v<V;v++)
             adj[v]=new Bag<Integer>();
     }
+    /**
+    public Graph(Scanner in)
+    {
+        this(in.nextInt());
+        this.E=in.nextInt();
+        for(int i=0;i<E;i++)
+        {
+            int v=in.nextInt();
+            int w=in.nextInt();
+            addEdge(v,w);
+        }
+    }
+     */
     public int V()
     {
         return V;
