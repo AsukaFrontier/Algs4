@@ -1,7 +1,7 @@
-package Graph;
+package Graphs;
 
 /**
- * Search(Graph G, int s)
+ * Search(Graphs G, int s)
  * boolean marked(int v)
  * int count()
  */

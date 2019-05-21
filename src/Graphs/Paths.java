@@ -1,7 +1,7 @@
-package Graph;
+package Graphs;
 
 /**
- * Paths(Graph G, int s)
+ * Paths(Graphs G, int s)
  * boolean hasPathTo(int v)
  * Iterable<Integer> pathTo(int v)
  */

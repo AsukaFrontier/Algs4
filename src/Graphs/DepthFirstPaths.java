@@ -1,4 +1,4 @@
-package Graph;
+package Graphs;
 import Fundamentals.Stack;
 public class DepthFirstPaths {
     private boolean[] marked;

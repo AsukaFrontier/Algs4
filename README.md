@@ -8,5 +8,5 @@ Contains:
 2.3. Shell;
 2.4. Merge;
 3. Search.
-4. Graph.
+4. Graphs.
 5. Strings.
