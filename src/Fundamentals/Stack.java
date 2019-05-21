@@ -1,19 +1,18 @@
 package Fundamentals;
-
+/**
+ * private Node first;
+ * private int N;
+ * public void push(Item item)
+ * public Item pop()
+ * public boolean isEmpty()
+ * public int size()
+ * public Iterator<Item> iterator()
+ * private class Node{}
+ * private class ListIterator implements Iterator<Item>{}
+ */
 import java.util.Iterator;
 public class Stack<Item> implements Iterable<Item> {
-    /**
-     * public:
-     * Fundamentals.Stack()
-     * void push(Item item)
-     * Item pop()
-     * boolean isEmpty()
-     * int size()
-     * Iterator<Item> iterator()
-     * private:
-     * class Node()
-     * class ListIterator implements Iterator<Item>
-     */
+
     private Node first;
     private int N;
     private class Node
