@@ -1,17 +1,19 @@
 package Fundamentals;
+/**
+ * private Node first;
+ * private Node last;
+ * private int N;
+ * private class Node{}
+ * public boolean isEmpty()
+ * public void enqueue(Item item)
+ * public Item dequeue()
+ * public int size()
+ * public Iterator<Item> iterator()
+ * private class ListIterator implements Iterator<Item>{}
+ */
 import java.util.Iterator;
 public class Queue<Item> implements Iterable<Item> {
-    /**
-     * public:
-     * void enqueue(Item item)
-     * Item dequeue()
-     * boolean isEmpty()
-     * int size()
-     * Iterator<Item> iterator()
-     * private:
-     * class Node
-     * class ListIterator implements Iterator<Item>
-     */
+
     private Node first;
     private Node last;
     private int N;
@@ -77,6 +79,7 @@ public class Queue<Item> implements Iterable<Item> {
             //
         }
     }
+    //----------UNIT TEST-------------------//
     public static void main(String[] args)
     {
         //Test of Fundamentals.Queue

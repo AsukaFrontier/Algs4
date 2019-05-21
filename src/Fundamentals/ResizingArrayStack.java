@@ -70,6 +70,7 @@ public class ResizingArrayStack<Item> implements Iterable<Item> {
             //
         }
     }
+    //----------UNIT TEST-------------------//
     public static void main(String[] args)
     {
         //Test of Fundamentals.ResizingArrayStack
