@@ -1,7 +1,6 @@
 package Graphs;
-
 import Fundamentals.Bag;
-
+//Connected Components
 /**
  * private boolean[] marked;
  * private int[] id;
