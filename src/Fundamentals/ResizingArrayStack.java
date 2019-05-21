@@ -1,18 +1,17 @@
 package Fundamentals;
-
+/**
+ * private Item[] a;
+ * private int N=0;
+ * public boolean isEmpty()
+ * public int size()
+ * public void push(Item item)
+ * public Item pop()
+ * public Iterator<Item> iterator()
+ * private void resize(int max)
+ * private class ReverseArrayIterator implements Iterator<Item>{}
+ */
 import java.util.Iterator;
 public class ResizingArrayStack<Item> implements Iterable<Item> {
-    /**
-     * public:
-     * boolean isEmpty()
-     * int size()
-     * void push(Item item)
-     * Item pop()
-     * Iterator<Item> iterator()
-     * private:
-     * void resize(int max)
-     * private class ReverseArrayIterator implements Iterator<Item>
-     */
     private Item[] a = (Item[]) new Object[1];
     private int N=0;
 
