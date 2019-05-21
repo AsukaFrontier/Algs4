@@ -1,13 +1,13 @@
 package Fundamentals;
-
-import edu.princeton.cs.algs4.*;
+/**
+ * private final String name;
+ * private int count;
+ * Counter(String id)
+ * void increment()
+ * int tally()
+ * String toString()
+ */
 public class Counter {
-    /**
-     * Fundamentals.Counter(String id)
-     * void increment()
-     * int tally()
-     * String toString()
-     */
     private final String name;
     private int count;
 
@@ -19,7 +19,7 @@ public class Counter {
     {
         count++;
     }
-    public int tally()
+    public int tally()//该对象创建之后计数器被加1的次数；
     {
         return count;
     }
@@ -27,14 +27,14 @@ public class Counter {
     {
         return count+" "+name;
     }
-
+    //----------UNIT TEST---------------------//
     public static void main(String[] args)
     {
         Counter heads= new Counter("heads");
         Counter tails= new Counter("tails");
         heads.increment();
         tails.increment();
-        StdOut.println(heads+" "+tails);
-        StdOut.println(heads.tally()+tails.tally());
+        System.out.println(heads+" "+tails);
+        System.out.println(heads.tally()+tails.tally());
     }
 }

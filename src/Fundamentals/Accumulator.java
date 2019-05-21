@@ -1,14 +1,16 @@
 package Fundamentals;
-
-public class Accumulator {
-    /**
-     * Fundamentals.Accumulator()
-     * void addDataValue(double val)
-     * double mean()
-     * String toString()
-     */
+/**
+ * private double total;
+ * private int N;
+ * void addDataValue(double val)
+ * double mean()
+ * String toString()
+ */
+public class Accumulator
+{
     private double total;
     private int N;
+
     public void addDataValue(double val)
     {
         //
@@ -23,6 +25,7 @@ public class Accumulator {
     {
         return "The total is "+total+", and the mean value is "+String.format("%7.5f",mean());
     }
+    //--------------------UNIT TEST-------------//
     public static void main(String[] args)
     {
         //
