@@ -34,7 +34,7 @@ public class Counter {
         Counter tails= new Counter("tails");
         heads.increment();
         tails.increment();
-        System.out.println(heads+" "+tails);
+        System.out.println(heads+", "+tails);
         System.out.println(heads.tally()+tails.tally());
     }
 }

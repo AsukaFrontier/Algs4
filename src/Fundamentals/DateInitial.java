@@ -1,14 +1,17 @@
 package Fundamentals;
-
+/**
+ * private final int month;
+ * private final int day;
+ * private final int year;
+ * public DateInitial(int m, int d, int y)
+ * public int day()
+ * public int month()
+ * public int year()
+ * public String toString()
+ * public boolean equals(Object x)
+ */
 public class DateInitial
 {
-    /**
-     * Fundamentals.Date(int month, int day, int year)
-     * int day()
-     * int month()
-     * int year()
-     * String toString()
-     */
     private final int month;
     private final int day;
     private final int year;
@@ -51,6 +54,7 @@ public class DateInitial
                     return true;
         return false;
     }
+    //----------UNIT TEST-------------------//
     public static void main(String[] args)
     {
         //Test

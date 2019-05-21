@@ -1,15 +1,18 @@
 package Fundamentals;
-
+/**
+ * private Item[] a;
+ * private int N;
+ * public FixedCapacityStack(int cap)
+ * public void push(Item item)
+ * public Item pop()
+ * public boolean isEmpty()
+ * public int size()
+ * private void resize(int max)
+ */
 public class FixedCapacityStack<Item> {
-    /**
-     * Fundamentals.FixedCapacityStack(int cap)
-     * void push(Item item)
-     * Item pop()
-     * boolean isEmpty()
-     * int size()
-     */
     private Item[] a;
     private int N;
+
     public FixedCapacityStack(int cap)
     {
         a=(Item[]) new Object[cap];

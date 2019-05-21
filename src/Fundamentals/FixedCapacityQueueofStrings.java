@@ -1,11 +1,13 @@
 package Fundamentals;
 /**
- * public:
- * Fundamentals.FixedCapacityQueueofStrings(int cap)
- * void enqueue(String item)
- * String dequeue()
- * boolean isEmpty()
- * int size()
+ * private String[] q;
+ * private int head;
+ * private int tail;
+ * public FixedCapacityQueueofStrings(int cap)
+ * public void enqueue(String item)
+ * public String dequeue()
+ * public boolean isEmpty()
+ * public int size()
  */
 public class FixedCapacityQueueofStrings
 {
@@ -29,7 +31,7 @@ public class FixedCapacityQueueofStrings
         head++;
         return temp;
     }
-    boolean isEmpty()
+    public boolean isEmpty()
     {
         return (tail-head)==0;
     }

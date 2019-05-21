@@ -1,7 +1,8 @@
 package Fundamentals;
-import java.util.Arrays;
 /**
  * public static int rank(int key,int[] a)
+ * public static int rankRecursive(int key, int[] a)
+ * private static int rankRecursive(int key, int[] a, int lo, int hi)
  */
 public class BinarySearch
 {
