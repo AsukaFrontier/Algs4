@@ -2,7 +2,7 @@ package Fundamentals;
 import java.util.Iterator;
 /**
  *private Node first;
- * private class Node{};
+ * private class Node{}
  * public void add(Item item)
  * public Iterator<Item> iterator()
  * private class ListIterator implements Iterator<Item>{}
