@@ -1,5 +1,14 @@
 package Graphs;
 import Fundamentals.Stack;
+/**
+ * private boolean marked;
+ * private int[] edgeTo;
+ * private int s;
+ * public DepthFirstPaths(Graph G, int s)
+ * private void dfs(Graph G, int v)
+ * public boolean hasPathTo(int v)
+ * public Iterable<Integer> pathTo(int v)
+ */
 public class DepthFirstPaths {
     private boolean[] marked;
     private int[] edgeTo;
