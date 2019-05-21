@@ -5,8 +5,6 @@ package Sorting;
  * private static boolean less(Comparable v, Comparable w)
  * private static void exch(Comparable[] a, int i, int j)
  * private static void show(Comparable[] a)
- * **
- * public static void main(String[] args)
  */
 import Fundamentals.Date;
 public class Example
