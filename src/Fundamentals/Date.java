@@ -10,10 +10,10 @@ package Fundamentals;
  * public int year()
  * public String toString()
  * public int compareTo(Date that)
+ * public boolean equals(Object x)
  * **
  * public Date(String date)
  * public int hashCode()
- * public boolean equals()
  */
 public class Date implements Comparable<Date>//
 {
@@ -70,6 +70,23 @@ public class Date implements Comparable<Date>//
             return -1;
         //this.day==that.day
         return 0;
+    }
+    public boolean equals(Object x)
+    {
+        if(this==x)
+            return true;
+        if(x==null)
+            return false;
+        if(this.getClass()!=x.getClass())
+            return false;
+        Date that=(Date) x;
+        if(this.day!=that.day)
+            return false;
+        if(this.month!=that.month)
+            return false;
+        if(this.year!=that.year)
+            return false;
+        return true;
     }
     //----------UNIT TEST-------------------//
     public static void main(String[] args)
