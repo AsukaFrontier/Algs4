@@ -3,8 +3,8 @@ package Fundamentals;
  * private Node first;
  * private Node last;
  * private int N;
- *
  * private class Node{}
+ *
  * public boolean isEmpty()
  * public void enqueue(Item item)
  * public Item dequeue()

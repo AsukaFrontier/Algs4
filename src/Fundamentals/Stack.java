@@ -2,13 +2,13 @@ package Fundamentals;
 /**
  * private Node first;
  * private int N;
+ * private class Node{}
  *
  * public void push(Item item)
  * public Item pop()
  * public boolean isEmpty()
  * public int size()
  * public Iterator<Item> iterator()
- * private class Node{}
  * private class ListIterator implements Iterator<Item>{}
  */
 import java.util.Iterator;

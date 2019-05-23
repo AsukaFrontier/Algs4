@@ -3,15 +3,15 @@ package Fundamentals;
 /**
  * Page 61, 62;
  * private int[] a;
- * public StaticSETofInts(int[] keys)
+ * public BinarySearch_StaticSETofInts(int[] keys)
  * public boolean contains(int key)
  * private int rank(int key)
  */
 import java.util.Arrays;
-public class StaticSETofInts {
+public class BinarySearch_StaticSETofInts {
     private int[] a;
     //
-    public StaticSETofInts(int[] keys)
+    public BinarySearch_StaticSETofInts(int[] keys)
     {
         a= new int[keys.length];
         for(int i=0;i<keys.length;i++)
