@@ -8,6 +8,7 @@ package Fundamentals;
  * public Item pop()
  * public boolean isEmpty()
  * public int size()
+ *
  * private void resize(int max)
  */
 public class FixedCapacityStack<Item> {
@@ -35,7 +36,7 @@ public class FixedCapacityStack<Item> {
     }
     public Item pop()
     {
-        Item item= a[--N];
+        Item item= a[--N];//此时，a[N]仍然能够索引到Item元素；
         a[N]=null;
         if(N>0&&N==a.length/4)
             resize(a.length/2);
@@ -43,7 +44,8 @@ public class FixedCapacityStack<Item> {
     }
     private void resize(int max)
     {
-        Item[] temp= (Item[]) new Object[max];
+        Item[] temp;
+        temp = (Item[]) new Object[max];
         for(int i=0;i<N;i++)
         {
             temp[i]=a[i];
