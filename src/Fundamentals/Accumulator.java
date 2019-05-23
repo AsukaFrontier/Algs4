@@ -2,10 +2,10 @@ package Fundamentals;
 /**
  * private double total;
  * private int N;
- * Accumulator()
- * void addDataValue(double val)
- * double mean()
- * String toString()
+ *
+ * public void addDataValue(double val)
+ * private double mean()
+ * public String toString()
  */
 public class Accumulator
 {

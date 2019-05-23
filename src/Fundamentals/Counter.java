@@ -3,10 +3,10 @@ package Fundamentals;
  * private final String name;
  * private int count;
  *
- * Counter(String id)
- * void increment()
- * int tally()//计数器的值
- * String toString()
+ * public Counter(String id)
+ * public void increment()
+ * public int tally()//计数器的值
+ * public String toString()
  */
 public class Counter {
     //实例变量的声明；
