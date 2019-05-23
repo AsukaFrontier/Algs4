@@ -13,18 +13,22 @@ package Fundamentals;
  * **
  * public Date(String date)
  * public int hashCode()
+ * public boolean equals()
  */
-public class Date implements Comparable<Date>{
+public class Date implements Comparable<Date>//
+{
+    //
     private final int day;
     private final int month;
     private final int year;
-
+    //
     public Date(int day, int month, int year)
     {
         this.day=day;
         this.month=month;
         this.year=year;
     }
+    //
      public int day()
      {
      return day;
@@ -41,6 +45,7 @@ public class Date implements Comparable<Date>{
     {
         return month+"/"+day+"/"+year;
     }
+    //
     public int compareTo(Date that)
     {
         /**

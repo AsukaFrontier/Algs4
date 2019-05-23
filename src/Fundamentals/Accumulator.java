@@ -2,7 +2,7 @@ package Fundamentals;
 /**
  * private double total;
  * private int N;
- *
+ * Accumulator()
  * void addDataValue(double val)
  * double mean()
  * String toString()
@@ -24,7 +24,7 @@ public class Accumulator
     }
     public String toString()
     {
-        return "The total is "+total+", and the mean value is "+String.format("%7.5f",mean());
+        return "The total is "+total+", and the mean value is "+String.format("%7.5f",mean())+".\n";
     }
     //--------------------UNIT TEST-------------//
     public static void main(String[] args)
@@ -32,9 +32,8 @@ public class Accumulator
         //
         int[] ints={1,2,3,5,8,13,21};
         Accumulator acc=new Accumulator();
-        for(int a:ints) {
+        for(int a:ints)
             acc.addDataValue(a);
-        }
         System.out.println(acc);
     }
 }
