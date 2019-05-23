@@ -9,6 +9,9 @@ package Fundamentals;
  * public int year()
  * public String toString()
  * public int compareTo(Date that)
+ * **
+ * public Date(String date)
+ * public int hashCode()
  */
 public class Date implements Comparable<Date>{
     private final int day;
