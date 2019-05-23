@@ -2,19 +2,22 @@ package Fundamentals;
 /**
  * private final String name;
  * private int count;
+ *
  * Counter(String id)
  * void increment()
- * int tally()
+ * int tally()//计数器的值
  * String toString()
  */
 public class Counter {
+    //实例变量的声明；
     private final String name;
     private int count;
-
+    //构造函数；
     public Counter(String id)
     {
         name=id;
     }
+    //实例方法
     public void increment()
     {
         count++;
@@ -27,11 +30,14 @@ public class Counter {
     {
         return count+" "+name;
     }
+    //测试用例；
     //----------UNIT TEST---------------------//
     public static void main(String[] args)
     {
+        //创建并初始化类的对象；
         Counter heads= new Counter("heads");
         Counter tails= new Counter("tails");
+        //调用实例方法
         heads.increment();
         tails.increment();
         System.out.println(heads+", "+tails);
