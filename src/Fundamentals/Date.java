@@ -92,5 +92,10 @@ public class Date implements Comparable<Date>//
     public static void main(String[] args)
     {
         //
+        int m=11;
+        int d=28;
+        int y=1994;
+        Date birthday = new Date(m,d,y);
+        System.out.println(birthday);
     }
 }
