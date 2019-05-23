@@ -2,6 +2,7 @@ package Fundamentals;
 /**
  * private Node first;
  * private int N;
+ *
  * public void push(Item item)
  * public Item pop()
  * public boolean isEmpty()

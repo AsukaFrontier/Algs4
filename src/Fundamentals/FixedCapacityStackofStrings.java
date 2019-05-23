@@ -2,6 +2,7 @@ package Fundamentals;
 /**
  * private String[] a;
  * private int N;
+ *
  * public FixedCapacityStackofStrings(int cap)
  * public void push(String item)
  * public String pop()

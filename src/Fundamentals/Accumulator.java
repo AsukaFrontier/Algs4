@@ -2,6 +2,7 @@ package Fundamentals;
 /**
  * private double total;
  * private int N;
+ *
  * void addDataValue(double val)
  * double mean()
  * String toString()

@@ -2,6 +2,7 @@ package Fundamentals;
 /**
  * private Item[] a;
  * private int N;
+ *
  * public FixedCapacityStack(int cap)
  * public void push(Item item)
  * public Item pop()

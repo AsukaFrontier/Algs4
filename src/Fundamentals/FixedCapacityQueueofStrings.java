@@ -3,6 +3,7 @@ package Fundamentals;
  * private String[] q;
  * private int head;
  * private int tail;
+ *
  * public FixedCapacityQueueofStrings(int cap)
  * public void enqueue(String item)
  * public String dequeue()

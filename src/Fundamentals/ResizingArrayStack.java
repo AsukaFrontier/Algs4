@@ -2,6 +2,7 @@ package Fundamentals;
 /**
  * private Item[] a;
  * private int N=0;
+ *
  * public boolean isEmpty()
  * public int size()
  * public void push(Item item)
