@@ -8,8 +8,8 @@ package Fundamentals;
  * public void push(Item item)
  * public Item pop()
  * public Iterator<Item> iterator()
- * private void resize(int max)
  * private class ReverseArrayIterator implements Iterator<Item>{}
+ * private void resize(int max)
  */
 import java.util.Iterator;
 public class ResizingArrayStack<Item> implements Iterable<Item> {
