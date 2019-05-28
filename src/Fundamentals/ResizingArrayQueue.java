@@ -1,7 +1,6 @@
 package Fundamentals;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 /**
  * private Item[] q;
  * private int N;
