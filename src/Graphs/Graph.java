@@ -23,7 +23,7 @@ public class Graph {
     {
         this.V=V;
         this.E=0;
-        adj=(Bag<Integer>[]) new Object[V];
+        adj=(Bag<Integer>[]) new Bag[V];
         for(int v=0;v<V;v++)
             adj[v]=new Bag<Integer>();
     }
