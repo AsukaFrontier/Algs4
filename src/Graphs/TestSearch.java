@@ -6,7 +6,7 @@ public class TestSearch {
         //Graph G = new Graph(new In(args[0]));
         Graph G= new Graph(new In("D://Development//Java//IDEA//Algs4//src//Graphs//tinyG.txt"));
         //int s= Integer.parseInt(args[1]);
-        int s=0;
+        int s=9;
         //DepthFirstSearch search= new DepthFirstSearch(G,s);
         BreadthFirstSearch search= new BreadthFirstSearch(G,s);
         for(int v=0;v<G.V();v++)
