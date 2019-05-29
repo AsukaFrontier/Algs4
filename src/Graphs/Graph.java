@@ -1,22 +1,18 @@
 package Graphs;
 import Fundamentals.Bag;
+import edu.princeton.cs.algs4.In;
 /**
  * private int V;
  * private int E;
  * private Bag<Integer>[] adj;
+ *
  * public Graph(int V)
  * public Graph(int[] a)
- * //public Graph(Scanner in)
  * public int V()
  * public int E()
  * public void addEdge(int v, int w)
- * public Iterable<Integer>adj(int v)
+ * public Iterable<Integer>adjacent(int v)
  * public String toString()
- * **
- * public static int degree(Graphs G, int V)
- * public static int maxDegree(Graphs G)
- * public static double avgDegree(Graphs G)
- * public static int numberOfSelfLoops(Graphs G)
  */
 public class Graph {
     private final int V;//顶点数目
@@ -29,15 +25,14 @@ public class Graph {
     {
         this.V=V;
         this.E=0;
-        adj=(Bag<Integer>[]) new Bag[V];//泛型数组?
+        adj=(Bag<Integer>[]) new Bag[V];//创建:一个Bag[]数组
         for(int v=0;v<V;v++)
-            adj[v]=new Bag<Integer>();
+            adj[v]=new Bag<Integer>();//初始化数组中每个元素
     }
     public Graph(int[] a)
     {
         this(a[0]);
         this.E=a[1];
-        //for(int i=2;i<2*E+2;i=i+2)
         for(int i=2;i<a.length;i=i+2)
         {
             int v=a[i];
@@ -45,19 +40,17 @@ public class Graph {
             addEdge(v,w);
         }
     }
-    /**
-    public Graph(Scanner in)
+    public Graph(In in)
     {
-        this(in.nextInt());
-        this.E=in.nextInt();
-        for(int i=0;i<E;i++)
+        this(in.readInt());
+        int E= in.readInt();
+        for(int i=0;i<E;i++)//
         {
-            int v=in.nextInt();
-            int w=in.nextInt();
+            int v=in.readInt();
+            int w=in.readInt();
             addEdge(v,w);
         }
     }
-     */
     public int V()
     {
         return V;
@@ -66,7 +59,7 @@ public class Graph {
     {
         return E;
     }
-    public void addEdge(int v,int w)//v -> w
+    public void addEdge(int v,int w)//v-w
     {
         adj[v].add(w);
         adj[w].add(v);
@@ -76,7 +69,7 @@ public class Graph {
     {
         return adj[v];
     }
-    public String toString()
+    public String toString()//对象的字符串表示
     {
         String s= V+" vertex/vertices, "+E+" edge/edges.\n";
         for(int v=0;v<V;v++)
@@ -87,39 +80,5 @@ public class Graph {
             s=s+"\n";
         }
         return s;
-    }
-    //Graph Processing
-    public static int degree(Graph G, int v)
-    {
-        int degree=0;
-        for(int w:G.adjacent(v))
-            degree++;
-        return degree;
-    }
-    public static int maxDegree(Graph G)
-    {
-        int max=0;
-        for(int v=0;v<G.V();v++)
-            if(degree(G,v)>max)
-                max=degree(G,v);
-        return max;
-    }
-    public static double avgDegree(Graph G)
-    {
-        return 2*G.E()/G.V();
-    }
-    public static int numberOfSelfLoops(Graph G)//计算自环的个数
-    {
-        int count=0;
-        for(int v=0;v<G.V();v++)
-            for(int w:G.adjacent(v))
-                if(v==w)
-                    count++;
-        return count;
-    }
-    //--------------UNIT TEST--------------//
-    public static void main(String[] args)
-    {
-        //int[] tinyG_txt={13,13,0,5,4,3,0,1,9,12,6,4,5,4,0,2,11,12,9,10,0,6,7,8,9,11,5,3};
     }
 }
