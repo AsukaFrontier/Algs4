@@ -1,6 +1,6 @@
 # Algs4
 Algs4 implementations.
-Contains:
+Algs4->src.
 1. Fundamentals.
 2. Sorting.
 3. Searching.
