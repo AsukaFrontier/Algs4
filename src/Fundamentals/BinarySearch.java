@@ -38,11 +38,4 @@ public class BinarySearch
         else
             return mid;
     }
-    //----------------UNIT TEST--------------------//
-    public static void main(String[] args)
-    {
-        int[] ints={1,2,3,5,8,13,21,34,55};
-        int int_index=rankRecursive(13,ints);
-        System.out.print(int_index);
-    }
 }
