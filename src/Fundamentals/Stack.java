@@ -29,7 +29,7 @@ public class Stack<Item> implements Iterable<Item> {
     {
         return N;
     }
-    public void push(Item item)
+    public void push(Item item)//向栈顶添加元素；在链表表头插入结点
     {
         Node newfirst= new Node();
         newfirst.item=item;
@@ -37,7 +37,7 @@ public class Stack<Item> implements Iterable<Item> {
         first=newfirst;
         N++;
     }
-    public Item pop()
+    public Item pop()//删除链表表头结点
     {
         Item temp= first.item;
         first.item=null;

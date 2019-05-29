@@ -31,7 +31,7 @@ public class Queue<Item> implements Iterable<Item> {
     {
         return N;
     }
-    public void enqueue(Item item)
+    public void enqueue(Item item)//在链表表头插入结点；
     {
         Node newLast= new Node();
         newLast.item=item;
@@ -48,7 +48,7 @@ public class Queue<Item> implements Iterable<Item> {
         }
         N++;
     }
-    public Item dequeue()
+    public Item dequeue()//在链表表尾删除节点
     {
         Item temp=first.item;
         first=first.next;
@@ -64,12 +64,12 @@ public class Queue<Item> implements Iterable<Item> {
     }
     private class ListIterator implements Iterator<Item>
     {
-        private Node current=first;
-        public boolean hasNext()
+        private Node current=first;//记录链表的当前结点
+        public boolean hasNext()//检测current是否为null；如果current!=null，则可以调用next()；
         {
-            return current.next!=null;
+            return current!=null;
         }
-        public Item next()
+        public Item next()//保存当前元素的引用，将current变量指向链表中的下一个结点并返回所保存的引用；
         {
             Item item= current.item;
             current=current.next;

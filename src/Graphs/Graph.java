@@ -25,9 +25,9 @@ public class Graph {
     {
         this.V=V;
         this.E=0;
-        adj=(Bag<Integer>[]) new Bag[V];//创建:一个Bag[]数组
+        adj=(Bag<Integer>[]) new Object[V];//adj指向一个数组,
         for(int v=0;v<V;v++)
-            adj[v]=new Bag<Integer>();//初始化数组中每个元素
+            adj[v]=new Bag<Integer>();//adj[]的每个元素，指向一个Bag链表；
     }
     public Graph(int[] a)
     {
