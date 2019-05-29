@@ -1,9 +1,9 @@
 package Graphs;
 /**
- * public static int degree(Graphs G, int V)
- * public static int maxDegree(Graphs G)
- * public static double avgDegree(Graphs G)
- * public static int numberOfSelfLoops(Graphs G)
+ * public static int degree(GraphsTest G, int V)
+ * public static int maxDegree(GraphsTest G)
+ * public static double avgDegree(GraphsTest G)
+ * public static int numberOfSelfLoops(GraphsTest G)
  */
 public class GraphProcessing {
     public static int degree(Graph G, int v)

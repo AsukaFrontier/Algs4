@@ -11,10 +11,10 @@ public class TestSearch {
         for(int v=0;v<G.V();v++)
             if(search.marked(v))//v和s是连通的吗
                 System.out.print(v+" ");
-         System.out.println();
+        System.out.println();
 
-         if(search.count()!=G.V())//与s连通的顶点总数
-             System.out.print("Not");
-         System.out.println("connected.");
+        if(search.count()!=G.V())//与s连通的顶点总数
+            System.out.print("Not");
+        System.out.println("connected.");
     }
 }

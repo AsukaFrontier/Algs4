@@ -60,8 +60,8 @@ public class Digraph {
     {
         Digraph R= new Digraph(V);
         for(int v=0;v<V;v++)
-        for(int w: adjacent(v))
-            R.addEdge(w,v);
+            for(int w: adjacent(v))
+                R.addEdge(w,v);
         return R;
     }
     public String toString()
