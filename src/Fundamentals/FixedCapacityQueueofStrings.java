@@ -1,4 +1,5 @@
 package Fundamentals;
+//prototype;
 /**
  * private String[] q;
  * private int head;
