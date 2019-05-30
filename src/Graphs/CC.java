@@ -1,5 +1,5 @@
 package Graphs;
-//连通分量
+//连通分量Connected Components
 public class CC {
 
 }
