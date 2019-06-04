@@ -14,7 +14,8 @@ public class CC {
     private boolean[] marked; //寻找一个顶点，作为每个连通分量中深度优先搜索的起点
     private int[] id; //以顶点作为索引，将同一个连通分量中的顶点和连通分量的标识符关联起来
     private int count; //连通分量数
-
+    //0会赋值给第一个连通分量中的所有顶点
+    //1会赋值给第二个连通分量中的所有顶点
     public CC(Graph G)
     {
         marked= new boolean[G.V()];
