@@ -43,7 +43,7 @@ public class DirectedDFS {
         Digraph G = new Digraph(new In("D:\\Development\\Java\\IDEA\\Algs4\\src\\DirectedGraphs\\tinyDG.txt"));
         int start= 0;
 
-        DirectedDFS search= new DirectedDFS(G, start);//有向图的连通分量
+        DirectedDFS search= new DirectedDFS(G, start);//
         for(int v=0;v<G.V();v++)
             if(search.marked(v))
                 System.out.print(v+" ");
