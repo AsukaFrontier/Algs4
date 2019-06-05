@@ -1,6 +1,13 @@
 package DirectedGraphs;
 /**
- *
+ * private boolean[] marked; //已访问过的顶点
+ * private int[] id; //强连通分量的标识符
+ * private int count; //强连通分量的数量
+ * public SCC(Digraph G)
+ * private void dfs(Digraph G, int v)
+ * public boolean stronglyConnected(int v, int w)
+ * public int id(int v)
+ * public int count()
  */
 public class SCC
 //强连通分量
