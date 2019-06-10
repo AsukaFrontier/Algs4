@@ -54,12 +54,12 @@ public class EdgeWeightedGraph//加权无向图
     {
         return adj[v];
     }
-    public Iterable<Edge> edges()//图的所有边
+    public Iterable<Edge> edges()//返回加权无向图中的所有边
     {
         Bag<Edge> b= new Bag<Edge>();
-        for(int v=0;v<V;v++)
-            for(Edge e: adj[v])
-                if(e.other()>v)
+        for(int v=0;v<V;v++)//图中共有V个顶点
+            for(Edge e: adj[v])//顶点v的所有边
+                if(e.other()>v)//如果顶点v的某条边的另一个顶点大于v（该边未出现过），将该边加入到Bag
                     b.add(e);
         return b;
     }

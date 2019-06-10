@@ -1,6 +1,7 @@
 package MinimumSpanningTrees;
 
-public class Edge implements Comparable<Edge> {
+public class Edge implements Comparable<Edge> //加权边
+{
     private final int v;
     private final int w;
     private final double weight;
@@ -22,7 +23,7 @@ public class Edge implements Comparable<Edge> {
     {
         return w;
     }
-    public int compareTo(Edge that)//与另一个顶点作比较
+    public int compareTo(Edge that)//与另一个顶点作比较，比较权重的大小
     {
         if(this.weight()<that.weight())
             return -1;
