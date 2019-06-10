@@ -6,6 +6,8 @@ public class EdgeWeightedGraph//加权无向图
     private final int V;
     private int E;
     private Bag<Edge>[] adj;//邻接表
+    //adj是一个数组，数组中的每个元素是一个Bag<Edge>，Bag<>集合中的每个元素是Edge的对象;
+
     public EdgeWeightedGraph(int V)//构造函数，创建一幅含有V个顶点的空图
     {
         this.V=V;
