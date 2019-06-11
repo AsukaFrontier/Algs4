@@ -19,9 +19,14 @@ public class Edge implements Comparable<Edge> //加权边
     {
         return v;
     }
-    public int other()//边的另一个顶点
+    public int other(int vertex)//边的另一个顶点
     {
-        return w;
+        if(vertex==v)
+            return w;
+        else if(vertex==w)
+            return v;
+        else
+            throw new RuntimeException("Inconsistent edge.");
     }
     public int compareTo(Edge that)//与另一个顶点作比较，比较权重的大小
     {

@@ -47,7 +47,7 @@ public class EdgeWeightedGraph//加权无向图
     public void addEdge(Edge e)//向无向图中添加一条边e
     {
         int v= e.either();
-        int w= e.other();
+        int w= e.other(v);
         adj[v].add(e);
         adj[w].add(e);
         E++;
@@ -61,7 +61,7 @@ public class EdgeWeightedGraph//加权无向图
         Bag<Edge> b= new Bag<Edge>();
         for(int v=0;v<V;v++)//图中共有V个顶点
             for(Edge e: adj[v])//顶点v的所有边
-                if(e.other()>v)//如果顶点v的某条边的另一个顶点大于v（该边未出现过），将该边加入到Bag
+                if(e.other(v)>v)//如果顶点v的某条边的另一个顶点大于v（该边未出现过），将该边加入到Bag
                     b.add(e);
         return b;
     }
