@@ -7,6 +7,8 @@ package Sorting;
  * private static void show(Comparable[] a)
  */
 import Fundamentals.Date;
+import java.io.IOException;
+
 public class Example
 {
     public static void sort(Comparable[] a)
@@ -41,7 +43,7 @@ public class Example
         System.out.println();
     }
     //-------------------------------------------------//
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         Integer[] ints={5,4,3,2,1,6,7,8,9,10};
         sort(ints);
