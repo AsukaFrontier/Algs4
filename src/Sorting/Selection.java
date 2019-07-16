@@ -10,7 +10,7 @@ import Fundamentals.Date;
  * public static void main(String[] args)
  */
 public class Selection {
-    public static void sort(Comparable[] a)
+    public static void sort(Comparable[] a) //Selection.sort(Comparable[] a)
     {
         for(int i=0;i<a.length;i++)
         {
