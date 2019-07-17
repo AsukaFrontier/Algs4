@@ -1,105 +1,48 @@
 package Sorting;
-import Fundamentals.Date;
-/**
- * public static void sort(Comparable[] a)
- * public static boolean isSorted(Comparable[] a)
- * private static boolean less(Comparable v, Comparable w)
- * private static void exch(Comparable[] a, int i, int j)
- * private static void show(Comparable[] a)
- * **
- * public static void main(String[] args)
- */
-public class Quick {
-    public static void sort(Comparable[] a)
+public class Quick implements Sortable //
+{
+    @Override
+    public void sort(Comparable[] a)
     {
-        //
-        //arrayShuffle(a);
-        //StdRandom.shuffle(a);
+        RandomShuffle.shuffle(a); //随机打乱
         sort(a,0,a.length-1);
     }
-    private static void sort(Comparable[] a, int lo, int hi)
+    private void sort(Comparable[] a, int lo, int hi)
     {
-        //
-        if(hi<=lo)
+        if(hi<=lo) //对于只有一个元素的sort(), 不再进行递归
             return ;
-        int j=partition(a,lo,hi);
-        sort(a,lo,j-1);
+        int j= partition(a,lo,hi);
+        sort(a,lo,j-1);//递归的sort()不包含j
         sort(a,j+1,hi);
     }
-    private static int partition(Comparable[] a, int lo, int hi)
+    private int partition(Comparable[] a, int lo, int hi) //partition()方法本身不进行递归
+    //a[lo...hi]
     {
-        //
-        int i=lo;
-        int j=hi+1;
+        //每一次partition()只保证当前的a[lo,hi]中: a[lo,j-1]<=a[j], a[j]<=a[j+1,hi];
+        int i= lo;
+        int j= hi+1;
         Comparable v= a[lo];
         while(true)
         {
-            while(less(a[++i],v))
-                if(i==hi)
-                    break;
-            while(less(v,a[--j]))
-                if(j==lo)
-                    break;
-            if(i>=j)
-                break;
-            exch(a,i,j);
+            while(less(a[++i],v)&&i<hi) //(不扫描a[lo])扫描左侧, 直至找到一个元素a[i]>a[lo]
+                continue;
+            while(less(v,a[--j])&&j>lo) //扫描右侧, 直至找到一个元素a[j]<a[lo]
+                continue;
+            if(i>=j) //a[lo]的插入位置
+                break; //跳出外层循环
+            exch(a,i,j); //将左侧比a[lo]大的元素和右侧比a[lo]小的元素交换; //处理非中间的不适元素
         }
-        exch(a,lo,j);
+        exch(a,lo,j); //将a[lo]与a[j]交换;
+        // 此处a[j]<a[lo]: while(less(v,a[--j])&&j>lo) continue;语句使得索引j对应的a[j]小于a[lo];
         return j;
     }
-    /**
-    private static void arrayShuffle(Comparable[] a)
-    {
-        //
-    }
-     */
-    public static boolean isSorted(Comparable[] a)
-    {
-        for(int i=1;i<a.length;i++)
-        {
-            if(less(a[i],a[i-1]))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    private static boolean less(Comparable v, Comparable w)
-    {
-        if(v.compareTo(w)<0)
-            return true;
-        return false;
-    }
-    private static void exch(Comparable[] a, int i, int j)
-    {
-        Comparable temp=a[i];
-        a[i]=a[j];
-        a[j]=temp;
-    }
-    private static void show(Comparable[] a)
-    {
-        for(int i=0;i<a.length;i++)
-            System.out.print(a[i]+" ");
-        System.out.println();
-    }
-    //-----------------------------------------//
+    //------------------------UNIT TEST-----------------------//
     public static void main(String[] args)
     {
-        Integer[] ints={5,4,3,2,1,6,7,8,9,10};
-        sort(ints);
-        assert isSorted(ints);
-        show(ints);
-        //
-        String[] strs= {"e","d","c","b","a","f","g"};
-        sort(strs);
-        assert isSorted(strs);
-        show(strs);
-        //
-        Date d1=new Date(28,11,1994);
-        Date d2=new Date(02,06,1996);
-        Date[] dates={d1,d2};
-        sort(dates);
-        assert isSorted(dates);
-        show(dates);
+        Sortable s= new Quick();
+        Integer[] ints={5,4,3,2,6,7,8,1,9,10};
+        s.sort(ints);
+        //assert s.isSorted(ints);
+        s.show(ints);
     }
 }
