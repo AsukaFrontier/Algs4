@@ -5,7 +5,6 @@ package SortingExercises;
  * public int size()
  * public void insert(Key v)
  * public Key delMax()
- * @param <Key>
  */
 public class MaxPQ<Key extends Comparable<Key>>//
 {
