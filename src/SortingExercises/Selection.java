@@ -1,8 +1,6 @@
 package SortingExercises;
-
 public class Selection implements Sortable //
 {
-    //
     @Override
     public void sort(Comparable[] a) //Selection Sort
     {

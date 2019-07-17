@@ -1,12 +1,12 @@
 package SortingExercises;
-
-public interface Sortable //Selection, Insertion, Shell, Merge, Quick, Heap
+public interface Sortable
+//Selection, Insertion, Shell, Merge, Quick, Heap
 {
     default void sort(Comparable[] a)
     {
         //
     }
-    default boolean less(Comparable v, Comparable w)
+    default boolean less(Comparable v, Comparable w) //
     {
         return v.compareTo(w)<0;
     }
