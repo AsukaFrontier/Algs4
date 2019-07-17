@@ -16,7 +16,7 @@ public class Insertion implements Sortable //
         Sortable s= new Insertion();
         Integer[] ints={5,4,3,2,1,6,7,8,9,10};
         s.sort(ints);
-        assert s.isSorted(ints);
+        //assert s.isSorted(ints);
         s.show(ints);
     }
 }
