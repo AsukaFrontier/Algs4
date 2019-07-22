@@ -5,11 +5,7 @@ public interface GeneralST<Key, Value> //
     Value get(Key key);
     int size();
     //interface GenaralST的默认实现
-    default Iterable<Key> keys()
-    {
-        return null;
-    }
-    default void delete(Key key)
+    default void delete(Key key) //默认(延时)实现
     {
         put(key, null);
     }

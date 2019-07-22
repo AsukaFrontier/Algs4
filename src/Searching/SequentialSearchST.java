@@ -1,7 +1,8 @@
 package Searching;
-
 public class SequentialSearchST<Key, Value> implements GeneralST<Key, Value> //
 {
+    //一般符号表接口的无序链表实现，效率较低;
+    //该实现，当删除部分链表的值时，仍会使得部分链表的结点存在，占用内存空间;
     private class Node
     {
         Key key;
@@ -43,12 +44,4 @@ public class SequentialSearchST<Key, Value> implements GeneralST<Key, Value> //
             nodeCount++;
         return nodeCount;
     }
-    @Override
-    public Iterable<Key> keys()
-    {
-        System.out.println("To be implemented!");
-        return null;
-    }
-    //一般符号表接口的无序链表实现，效率较低;
-    //该实现，当删除部分链表的值时，仍会使得部分链表的结点存在，占用内存空间;
 }
