@@ -53,18 +53,18 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
         int i= rank(key);
         if(i<N&&keys[i].compareTo(key)==0) //查找到该key
             return vals[i];
-        else
+        else //在该出现的位置没有出现
             return null;
     }
     public void put(Key key, Value val)
     {
-        int i= rank(key);
-        if(i<N&&keys[i].compareTo(key)==0) //命中
+        int i= rank(key); //先定位出该key在数组中应该出现的地方
+        if(i<N&&keys[i].compareTo(key)==0) //命中(如果在该出现的地方出现了)
         {
             vals[i]= val;
             return ;//修改key对应的val后退出put()
         }
-        //未命中
+        //未命中(如果在该出现的地方没出现，就在该位置插入)
         for(int j=N;j>i;j--)//将待插入位置(i)的后面的元素各先后移一位
         {
             keys[j]=keys[j-1];
