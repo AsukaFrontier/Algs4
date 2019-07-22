@@ -4,6 +4,7 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
     private Key[] keys;
     private Value[] vals;
     private int N;
+    //
     public BinarySearchST(int capacity) //constructor
     {
         keys= (Key[]) new Comparable[capacity]; //keys[]是有序的
@@ -12,6 +13,38 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
     public int size()
     {
         return N;
+    }
+    public Key min()
+    {
+        return keys[0];
+    }
+    public Key max()
+    {
+        return keys[N-1];
+    }
+    public Key select(int k) //数组索引对应着排名大小
+    {
+        return keys[k];
+    }
+    //如下实现皆基于rank()的实现
+    public int rank(Key key) //迭代的binarySearch: 小于key的键的数量
+    //rank()使用二分查找算法而实现, 如果未命中, 则返回的位置为其应当被插入的位置
+    {
+        int lo=0;
+        int hi=N-1;//N: array.length
+        while(lo<=hi)
+        {
+            int mid= lo+(hi-lo)/2;
+            int cmp=key.compareTo(keys[mid]);
+            if(cmp<0)
+                hi=mid-1;
+            else
+            if(cmp>0)
+                lo=mid+1;
+            else
+                return mid;//数组中存在key对应的元素, 则返回该元素对应的位置
+        }
+        return lo; //二分查找未命中, 返回"数组中小于该元素的元素的数量"
     }
     public Value get(Key key)
     {
@@ -42,36 +75,6 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
         vals[i]=val;
         N++;
     }
-    public int rank(Key key) //binarySearch
-    {
-        int lo=0;
-        int hi=N-1;//N: array.length
-        while(lo<=hi)
-        {
-            int mid= lo+(hi-lo)/2;
-            int cmp=key.compareTo(keys[mid]);
-            if(cmp<0)
-                hi=mid-1;
-            else
-                if(cmp>0)
-                    lo=mid+1;
-                else
-                    return mid;//数组中存在key对应的元素, 则返回该元素对应的位置
-        }
-        return lo;
-    }
-    public Key min()
-    {
-        return keys[0];
-    }
-    public Key max()
-    {
-        return keys[N-1];
-    }
-    public Key select(int k)
-    {
-        return keys[k];
-    }
     public Key ceiling(Key key)
     {
         int i= rank(key);
@@ -82,11 +85,5 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
         System.out.println("To be implemented!");
         int i= rank(key);
         return keys[i];
-    }
-    @Override
-    public Iterable<Key> keys(Key lo, Key hi)
-    {
-        System.out.println("To be implemented!");
-        return null;
     }
 }

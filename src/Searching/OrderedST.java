@@ -1,5 +1,4 @@
 package Searching;
-
 public interface OrderedST<Key extends Comparable<Key>, Value> //Symbol Table
 {
     //
@@ -8,10 +7,10 @@ public interface OrderedST<Key extends Comparable<Key>, Value> //Symbol Table
     int size();
     Key min();
     Key max();
-    Key floor(Key key);
-    Key ceiling(Key key);
+    Key floor(Key key); //小于等于key的最大键
+    Key ceiling(Key key); //大于等于k的最小键
     int rank(Key key); //小于key的键的数量
-    Key select(int k);
+    Key select(int k); //找出排名为k的键
     //interface OrderedST的默认实现
     default void deleteMin()
     {
@@ -21,7 +20,7 @@ public interface OrderedST<Key extends Comparable<Key>, Value> //Symbol Table
     {
         delete(max());
     }
-    default int size(Key lo, Key hi)
+    default int size(Key lo, Key hi) //[lo...hi]之间的键的数量
     {
         if(hi.compareTo(lo)<0)
             return 0;
