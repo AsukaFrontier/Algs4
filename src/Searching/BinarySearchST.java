@@ -77,13 +77,14 @@ public class BinarySearchST<Key extends Comparable<Key>, Value>implements Ordere
     }
     public Key ceiling(Key key)
     {
-        int i= rank(key);
-        return keys[i];
+        return keys[rank(key)];
     }
     public Key floor(Key key)
     {
-        System.out.println("To be implemented!");
         int i= rank(key);
-        return keys[i];
+        if(keys[i]==key)
+            return key;
+        else
+            return keys[i-1];
     }
 }
