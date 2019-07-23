@@ -1,6 +1,6 @@
 package Searching;
 import java.util.ArrayList;
-public class BST<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> //
+public class BinarySearchTreeOrderedST<Key extends Comparable<Key>, Value> implements OrderedST<Key, Value> //
 {
     //实现BinarySearchTree查找算法所需的数据结构: binary search tree(二叉查找树)
     private class Node

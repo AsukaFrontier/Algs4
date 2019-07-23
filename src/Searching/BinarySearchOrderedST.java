@@ -1,11 +1,11 @@
 package Searching;
-public class BinarySearchST<Key extends Comparable<Key>, Value>implements OrderedSymbolTable<Key, Value>//
+public class BinarySearchOrderedST<Key extends Comparable<Key>, Value>implements OrderedST<Key, Value>//
 {
     private Key[] keys;
     private Value[] vals;
     private int N;
     //
-    public BinarySearchST(int capacity) //constructor
+    public BinarySearchOrderedST(int capacity) //constructor
     {
         keys= (Key[]) new Comparable[capacity]; //keys[]是有序的
         vals= (Value[]) new Object[capacity];

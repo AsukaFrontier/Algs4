@@ -1,5 +1,5 @@
 package Searching;
-public interface UnorderedSymbolTable<Key, Value> //
+public interface UnorderedST<Key, Value> //
 {
     void put(Key key, Value value);
     Value get(Key key);
