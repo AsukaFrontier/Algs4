@@ -1,5 +1,5 @@
 package Searching;
-public class BinarySearchST<Key extends Comparable<Key>, Value>implements OrderedST<Key, Value>//
+public class BinarySearchST<Key extends Comparable<Key>, Value>implements OrderedSymbolTable<Key, Value>//
 {
     private Key[] keys;
     private Value[] vals;

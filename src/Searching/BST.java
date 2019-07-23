@@ -1,5 +1,6 @@
 package Searching;
-public class BST<Key extends Comparable<Key>, Value> implements OrderedST<Key, Value> //
+import java.util.ArrayList;
+public class BST<Key extends Comparable<Key>, Value> implements OrderedSymbolTable<Key, Value> //
 {
     //实现BinarySearchTree查找算法所需的数据结构: binary search tree(二叉查找树)
     private class Node
@@ -107,7 +108,7 @@ public class BST<Key extends Comparable<Key>, Value> implements OrderedST<Key, V
         else
             return max(x.right);
     }
-    public Key floor(Key key)
+    public Key floor(Key key) //查找<=key的max
     {
         Node x= floor(root, key);
         if(x==null)
@@ -125,25 +126,173 @@ public class BST<Key extends Comparable<Key>, Value> implements OrderedST<Key, V
         else
             if(cmp==0)
                 return x;
-            else
+            else //cmp>0: 1, 若右子树中的最小的节点都比key大, 则当前根结点就是所求值; 否则(若右子树中的最小结点仍比key小), 在右子树中继续floor();
             {
                 Node temp= min(x.right);
                 if(temp.key.compareTo(key)>0)
                     return x;
                 else
                     return floor(x.right, key);
+                /**
+                 * //另一种写法
+                 * Node t= floor(x.right, key);
+                 * if(t!=null)
+                 *     return t;
+                 * else
+                 *     return x;
+                 */
             }
     }
-    public Key ceiling(Key key)
+    public Key ceiling(Key key) //>=key的min
     {
-        //
+        Node x= ceiling(root, key);
+        if(x==null)
+            return null;
+        else
+            return x.key;
+    }
+    private Node ceiling(Node x, Key key)
+    {
+        int cmp= key.compareTo(x.key);
+        if(cmp==0)
+            return x;
+        else
+            if(cmp>0) //key>x.key
+                return ceiling(x.right, key);
+            else //cmp<0: key<x.key
+            {
+                Node temp= max(x.left);
+                if(key.compareTo(temp.key)<0)
+                    return ceiling(x.left, key);
+                else
+                    return x;
+            }
     }
     public int rank(Key key)
     {
-        //
+        return rank(root, key);
+    }
+    private int rank(Node x, Key key)
+    {
+        if(x==null)
+            return 0;
+        int cmp= key.compareTo(x.key);
+        if(cmp==0) //当前根结点即为待rank的结点键
+            return size(x.left);
+        else
+            if(cmp<0) //key在左子树中
+                return rank(x.left, key);
+            else //cmp>0
+                return (size(x.left)+1)+ rank(x.right, key);
     }
     public Key select(int k)
     {
-        //
+        return select(root, k);
     }
+    private Key select(Node x, int k)
+    {
+        if(x==null)
+            return null;
+        int t= size(x.left); //左子树中节点数量
+        if(t==k)
+            return x.key;
+        else
+            if(t>k) //左子树中节点数量大于k
+                return select(x.left, k);
+            else //t<k
+                return select(x.right, k-(t+1));
+    }
+    @Override
+    public void deleteMin()
+    {
+        root= deleteMin(root);
+        return ;
+    }
+    private Node deleteMin(Node x)
+    {
+        if(x.left==null) //最终调用过程
+            return x.right;
+        //调用过程: 只要该节点左子树不为空, 则应递归调用其左子树的deleteMin();
+        x.left= deleteMin(x.left);
+        x.N= size(x.left)+size(x.right)+1; //or: x.N--;
+        return x;
+    }
+    @Override
+    public void deleteMax()
+    {
+        root= deleteMax(root);
+        return ;
+    }
+    private Node deleteMax(Node x)
+    {
+        if(x.right==null)
+            return x.left;
+        x.right= deleteMax(x.right);
+        x.N--;
+        return x;
+    }
+    @Override
+    public void delete(Key key)
+    {
+        root= delete(root, key);
+        return ;
+    }
+    private Node delete(Node x, Key key)
+    {
+        //找到该节点并删除该节点||在二叉树中并不存在该节点, 则不用再进行删除操作;
+        if(x==null) //若已经到达叶子节点的两条子链接, 且仍未找到该key时, 则在二叉树中不存在该节点, 递归结束;
+            return null;
+        int cmp= key.compareTo(x.key);
+        if(cmp<0)
+            return delete(x.left, key);
+        else
+            if(cmp>0)
+                return delete(x.right, key);
+            else //cmp==0: 找到待删除的结点
+            {
+                Node toBeDeleted= x; //待删除的结点
+                if(x.right==null) //x.left==null也不影响后续操作
+                    return x.left; //若待删除结点的右子树为空, 则删除该节点后需要把该节点的左子树返回给待删除结点的父节点;
+                //x仍指向着待删除结点所对应的位置;
+                x= min(x.right);//待删除结点的右子树中的最小节点: 后继节点; 将后继节点替代待删除结点;
+                x.left= toBeDeleted.left;
+                x.right= deleteMin(toBeDeleted.right);
+            }
+        x.N=size(x.left)+size(x.right)+1;
+        return x;
+    }
+    @Override
+    public Iterable<Key> keys(Key lo, Key hi)
+    {
+        ArrayList<Key> aList= new ArrayList<>();
+        keys(root, aList, lo, hi);
+        return aList;
+    }
+    private void keys(Node x, ArrayList aList, Key lo, Key hi)
+    {   //中序遍历: 先遍历左子树, 再访问根结点, 再遍历右子树
+        if(x==null)
+            return ;
+        int cmplo= lo.compareTo(x.key);
+        int cmphi= hi.compareTo(x.key);
+        //先查找根结点的左子树
+        if(cmplo<0) //若lo<x.key: 区间的最小值在该节点的左子树中
+            keys(x.left, aList, lo, hi);
+        //再查找根结点
+        if(cmplo<=0&&cmphi>=0)// lo<=x.key&&hi>=x.key等价于x.key>=lo&&x.key<=hi
+            aList.add(x.key);
+        //再查找根结点的右子树
+        if(cmphi>0)
+            keys(x.right, aList, lo, hi);
+    }
+    /**
+     * //一般形式的中序遍历
+     * private void visit(Node x)
+     * {
+     *     if(x==null)
+     *         return ;
+     *     visit(x.left);
+     *     System.out.println(x.key);
+     *     visit(x.right);
+     * }
+     */
 }

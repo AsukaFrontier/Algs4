@@ -1,5 +1,5 @@
 package Searching;
-public interface OrderedST<Key extends Comparable<Key>, Value> //Symbol Table
+public interface OrderedSymbolTable<Key extends Comparable<Key>, Value> //Symbol Table
 {
     //
     void put(Key key, Value val); //将键值对存入表中，若值为null则将键key从表中删除

@@ -1,5 +1,5 @@
 package Searching;
-public class SequentialSearchST<Key, Value> implements GeneralST<Key, Value> //
+public class SequentialSearchST<Key, Value> implements UnorderedSymbolTable<Key, Value> //
 {
     //一般符号表接口的无序链表实现，效率较低;
     //该实现，当删除部分链表的值时，仍会使得部分链表的结点存在，占用内存空间;
