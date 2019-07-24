@@ -5,9 +5,9 @@ public interface UnorderedST<Key, Value> //
     Value get(Key key);
     int size();
     //interface GenaralST的默认实现
-    default void delete(Key key) //默认(延时)实现
+    default void delete(Key key) //默认不删除
     {
-        put(key, null);
+        return ;
     }
     default boolean contains(Key key)
     {
